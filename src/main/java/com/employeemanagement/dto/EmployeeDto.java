@@ -1,10 +1,11 @@
 package com.employeemanagement.dto;
 
-import com.employeemanagement.enums.EmployeeType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter
@@ -12,6 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class EmployeeDto extends BaseDto {
 
-  private String name;
-  private EmployeeType type;
+    @NotBlank(message = "The field can not be blank!!")
+    private String name;
+    private String type;
 }
